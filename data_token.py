@@ -1,3 +1,3 @@
-PAY_TOKEN = '381764678:TEST:63479'
+PAY_TOKEN = 'Введите свой токен для оплаты'
 
-TOKEN = '6550303172:AAEF_--fIiYPOralj92PPfj2gtLWKuG__gY'
+TOKEN = 'Ведите свои токен бота'
