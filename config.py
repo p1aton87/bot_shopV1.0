@@ -17,7 +17,8 @@ router = Router()
 kb1 = [
     [KeyboardButton(text='Купить товар')],
     [KeyboardButton(text='Мои заказы')],
-    [KeyboardButton(text='Каталог')]
+    [KeyboardButton(text='Каталог')],
+    [KeyboardButton(text='Обратная связь')]
 ]
 kb2 = [
     [KeyboardButton(text='Меню')]
@@ -36,6 +37,11 @@ async def catalog(message: types.Message):
 async def buy_item(message: types.Message, state: FSMContext):
     await message.answer('Хорошо, введите артикул предмета и бот сразу сделает меню оплаты', reply_markup=ReplyKeyboardRemove())
     await state.set_state(Unique_Id.state_for_buy_item)
+
+
+@router.message(F.text == 'Обратная связь')
+async def links_admins(message: types.Message):
+    await message.answer('Если вас интересуют какие-то вопросы или имеется проблема, напишите в телеграмм по этому номеру: +88800000000')
 
 
 @router.message(F.text == 'Мои заказы')
